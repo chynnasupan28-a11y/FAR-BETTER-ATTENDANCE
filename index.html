@@ -2,13 +2,76 @@
 <html>
 <head>
 <title>Far Better Attendance</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+
+<style>
+body{
+  font-family: Arial;
+  text-align:center;
+  background:#f5f5f5;
+  padding:20px;
+}
+
+h1{
+  color:#d32f2f;
+}
+
+#reader{
+  width:100%;
+  max-width:400px;
+  margin:auto;
+}
+
+button{
+  padding:15px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  margin:10px;
+}
+
+#devotion{
+  display:none;
+}
+
+</style>
+
 </head>
+
 
 <body>
 
 <h1>Far Better Attendance</h1>
 
-<p>Scanner Version 2 is coming...</p>
+<div id="reader"></div>
+
+<h3 id="result">
+Waiting for QR Scan...
+</h3>
+
+
+<div id="devotion">
+
+<h3>
+Did you bring your devotion notebook today?
+</h3>
+
+<button onclick="sendAttendance('YES')">
+YES
+</button>
+
+<button onclick="sendAttendance('NO')">
+NO
+</button>
+
+</div>
+
+
+<script src="app.js"></script>
+
 
 </body>
 </html>
